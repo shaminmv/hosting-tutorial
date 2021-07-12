@@ -74,9 +74,9 @@ First, let's check what version is the latest in the apt repository: $ apt-cache
 ```
 $ sudo apt-get update && sudo apt-get install -y nginx
 $ sudo service nginx start
-$ ifconfig
+$ ip a
 ```
-ifconfig  will give you the ip. Open the Ip on browser and you should see Nginx. If this is the first time you are installing Nginx Congratulations!
+ip a  will give you the ip. Open the Ip on browser and you should see Nginx. If this is the first time you are installing Nginx Congratulations!
 
 ## 7. Install Database server
 I will be using MariaDB for this but you can use Percona MySQL or MySql of your choice. 
