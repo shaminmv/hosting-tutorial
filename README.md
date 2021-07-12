@@ -79,4 +79,7 @@ $ ip a
 ip a  will give you the ip. Open the Ip on browser and you should see Nginx. If this is the first time you are installing Nginx Congratulations!
 
 ## 7. Create website directory inside www
-cd into ```/var/www/``` and create your website. In my case i will type ```shamm.in```
+cd into ```/var/www/``` and create your website. In my case i will type ```shamin.duckdns.org```
+```mkdir shamin.duckdns.org``
+``ls``
+``cd shamin.duckdns.org```
