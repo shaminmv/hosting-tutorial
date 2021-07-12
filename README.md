@@ -101,8 +101,8 @@ Create a file called ```jgefroh.com``` in the sites-available directory and add 
 
 ```
 server {
-       listen 81;
-       listen [::]:81;
+       listen 80;
+       listen [::]:80;
 
        server_name tharaf.duckdns.org;
 
