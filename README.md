@@ -88,7 +88,16 @@ cd into ```/var/www/``` and create your website. In my case i will type ```shami
 upload the files to the directory using WINSCP. Login using root this time to upload.
 
 
-## 9 . Follow from  step 6 onwards from https://jgefroh.medium.com/a-guide-to-using-nginx-for-static-websites-d96a9d034940
+## Step 4: Configure NGINX to serve your website
+You’ll need to tell NGINX about your website and how to serve it.
+cd into ```/etc/nginx/```. This is where the NGINX configuration files are located.
+The two directories we are interested are ```sites-available``` and ```sites-enabled```.
+
+```sites-enabled``` contains links to the configuration files that NGINX will actually read and run.
+
+What we’re going to do is create a configuration file in ```sites-available```, and then create a symbolic link (a pointer) to that file in ```sites-enabled``` to actually tell NGINX to run it.
+
+Create a file called ```jgefroh.com``` in the sites-available directory and add the following text to it:
 
 ```
 server {
