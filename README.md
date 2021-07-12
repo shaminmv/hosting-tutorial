@@ -83,3 +83,25 @@ cd into ```/var/www/``` and create your website. In my case i will type ```shami
 ```mkdir shamin.duckdns.org``
 ``ls``
 ``cd shamin.duckdns.org```
+
+## 8. Upload the HTML Files to the directory using WINSCP
+upload the files to the directory using WINSCP. Login using root this time to upload.
+
+
+## 9 . Follow from  step 6 onwards from https://jgefroh.medium.com/a-guide-to-using-nginx-for-static-websites-d96a9d034940
+
+```
+server {
+       listen 81;
+       listen [::]:81;
+
+       server_name tharaf.duckdns.org;
+
+       root /var/www/tharaf.duckdns.org;
+       index index.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
+```
