@@ -97,6 +97,8 @@ The two directories we are interested are ```sites-available``` and ```sites-ena
 
 What we’re going to do is create a configuration file in ```sites-available```, and then create a symbolic link (a pointer) to that file in ```sites-enabled``` to actually tell NGINX to run it.
 
+```sudo ln -s /etc/nginx/sites-available/sitename /etc/nginx/sites-enabled/```
+
 Create a file called ```jgefroh.com``` in the sites-available directory and add the following text to it:
 
 ```
