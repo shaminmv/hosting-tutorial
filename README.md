@@ -114,3 +114,10 @@ server {
        }
 }
 ```
+
+## Run a config test
+```sudo service nginx configtest```
+it must show OK..
+
+## Reload or Restart server
+``` sudo service nginx reload ```
