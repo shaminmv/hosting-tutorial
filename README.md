@@ -127,3 +127,45 @@ it must show OK..
 
 ## Reload or Restart server
 ``` sudo service nginx reload ```
+
+## Hosting a second website
+In order to host the second website, you need to point the domain DNS to our server. That can be done by adding 2 A records
+```A Record   --- @ --- ipaddress --- 300```
+```A Record   --- www --- ipaddress --- 300```
+
+## Create the domain folder
+```sudo mkdir tharaf.live ```
+add some html file inside.
+
+## Create config file for new domain.
+Go to etc/nginx/sites-available and create the file and name it as your website.
+
+Create a file called ```tharaf.live``` in the sites-available directory and add the following text to it:
+
+```
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name tharaf.duckdns.org;
+
+       root /var/www/tharaf.duckdns.org;
+       index index.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
+```
+
+```sites-enabled``` contains links to the configuration files that NGINX will actually read and run.
+
+What we’re going to do is create a configuration file in ```sites-available```, and then create a symbolic link (a pointer) to that file in ```sites-enabled``` to actually tell NGINX to run it.
+
+```sudo ln -s /etc/nginx/sites-available/sitename /etc/nginx/sites-enabled/```
+
+## Run a config test and reload the server
+``` sudo service nginx configtest ```
+``` sudo service nginx restart ```
+
+
