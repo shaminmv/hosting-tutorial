@@ -134,6 +134,7 @@ In order to host the second website, you need to point the domain DNS to our ser
 ```A Record   --- www --- ipaddress --- 300```
 
 ## Create the domain folder
+cd into /var/www and create the folder, and name it as your domain
 ```sudo mkdir tharaf.live ```
 add some html file inside.
 
@@ -147,9 +148,9 @@ server {
        listen 80;
        listen [::]:80;
 
-       server_name tharaf.duckdns.org;
+       server_name tharaf.live;
 
-       root /var/www/tharaf.duckdns.org;
+       root /var/www/tharaf.live;
        index index.html;
 
        location / {
@@ -162,7 +163,7 @@ server {
 
 What we’re going to do is create a configuration file in ```sites-available```, and then create a symbolic link (a pointer) to that file in ```sites-enabled``` to actually tell NGINX to run it.
 
-```sudo ln -s /etc/nginx/sites-available/sitename /etc/nginx/sites-enabled/```
+```sudo ln -s /etc/nginx/sites-available/tharaf.live /etc/nginx/sites-enabled/```
 
 ## Run a config test and reload the server
 ``` sudo service nginx configtest ```
